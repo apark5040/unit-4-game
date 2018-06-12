@@ -18,45 +18,43 @@ $("#totalScore").append(totalDiv);
 var counterDiv = $("<p>");
 $("#counter").append(counterDiv);
 counterDiv.text("Wins: " + wins + ", " +
-                "Loses: " + loses);
+    "Loses: " + loses);
 
 
 var crystalPic1 = $("<img>");
 $("#crystals").append(crystalPic1);
 crystalPic1.addClass("button-1");
 crystalPic1.attr("src", "assets/images/01.jpg");
-// crystalPic1.attr("value", buttonNumber1);
-
 
 
 var crystalPic2 = $("<img>");
 $("#crystals").append(crystalPic2);
 crystalPic2.addClass("button-2");
 crystalPic2.attr("src", "assets/images/02.jpg");
-// crystalPic2.attr("value", buttonNumber2);
+
 
 
 var crystalPic3 = $("<img>");
 $("#crystals").append(crystalPic3);
 crystalPic3.addClass("button-3");
 crystalPic3.attr("src", "assets/images/03.jpg");
-// crystalPic3.attr("value", buttonNumber3);
+
 
 
 var crystalPic4 = $("<img>");
 $("#crystals").append(crystalPic4);
 crystalPic4.addClass("button-4");
 crystalPic4.attr("src", "assets/images/04.jpeg");
-// crystalPic4.attr("value", buttonNumber4);
+
 
 function winLose() {
     if (totalScore == randomNumber) {
-        alert("You win!");
+        alert("You win! Click on a crystal to start again.");
         wins++;
         reset();
     }
     if (totalScore > randomNumber) {
-        alert("You lose!");
+        alert("You lose! Click on a crystal to start again");
         loses++;
         reset();
     }
@@ -70,18 +68,9 @@ function reset() {
     buttonNumber4 = 1 + Math.floor(Math.random() * 13);
     totalScore = 0;
     counterDiv.text("Wins: " + wins + ", " +
-                "Loses: " + loses);
+        "Loses: " + loses);
 }
 
-
-// $(".button").on("click", function () {
-//     a = parseFloat($(this).val());
-//     console.log(a);
-//     totalScore += a;
-//     totalDiv.text(totalScore);
-//     console.log(totalScore);
-//     winLose();
-// });
 
 $(".button-1").on("click", function () {
     totalScore += buttonNumber1;
